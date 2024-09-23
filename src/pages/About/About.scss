@@ -1,0 +1,22 @@
+@import '../../components/variables/colors.scss';
+@import '../../components/variables/mixins.scss';
+
+.about-section {
+  text-align: center;
+  padding: 20px;
+  background-color: $background-darken-color;
+  border: solid 1px $blue-darken-color;
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: $black-color;
+  }
+
+  p {
+    font-size: 1.2rem; 
+    line-height: 1.6;
+    color: $black-color;
+    max-width: 800px;
+    margin: 0 auto;
+  }
+}

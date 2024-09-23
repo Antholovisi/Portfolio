@@ -1,0 +1,45 @@
+@import '../../components/variables/colors.scss';
+@import '../../components/variables/mixins.scss';
+
+.portfolio-section {
+  text-align: center;
+  padding: 20px;
+  background-color: $background-darken-color;
+  border: solid 1px $blue-darken-color;
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: $black-color;
+  }
+
+  /* La grille pour les cartes */
+  .apartement_grid {
+    display: flex;
+    background-color: $blue-color;
+    border: solid 2px $blue-darken-color;
+    border-radius: 25px;
+    min-height: 100vh;
+    gap: 50px;
+    flex-wrap: wrap;
+    padding: 50px;
+    margin: 50px;
+    justify-content: center;
+    @include flex-center(stretch);
+
+    @media screen and (max-width: 880px) {
+      background-color: $background-light-color;
+    }
+  }
+
+  @media screen and (max-width: 930px) {
+    .apartement_grid {
+      margin-bottom: 0;
+      padding: 22px 0;
+      justify-content: center;
+      gap: 22px;
+      background-color: $blue-color;
+    }
+  }
+}
+
+

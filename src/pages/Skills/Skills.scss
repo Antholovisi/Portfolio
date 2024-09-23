@@ -1,0 +1,59 @@
+@import '../../components/variables/colors.scss';
+
+
+.skills-section {
+  text-align: center;
+  padding: 50px 20px;
+  background-color: #f9f9f9;
+
+  h1 {
+    margin-bottom: 30px;
+    font-size: 2.5rem;
+    color: $black-color;
+  }
+
+  .skills-container {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+
+  .skill-bar {
+    display: flex;
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    max-width: 600px;
+    margin: 0 auto;
+
+    span {
+      font-size: 1.2rem;
+      margin-bottom: 5px;
+      color: #333;
+    }
+
+    .progress {
+      background-color: #e0e0e0;
+      border-radius: 25px;
+      overflow: hidden;
+      height: 30px;
+      width: 100%;
+    }
+
+    .progress-done {
+      background: linear-gradient(to right, #F6CEE7, #3E63DD);
+      box-shadow: 0 3px 3px -5px #F6CEE7, 0 2px 5px #3E63DD;
+      border-radius: 25px;
+      color: white;
+      font-weight: bold;
+      text-align: center;
+      line-height: 30px;
+      height: 100%;
+      transition: width 1.5s ease-in-out;
+    }
+
+    .progress-done.active {
+      width: 100%;
+    }
+  }
+}

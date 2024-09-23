@@ -1,0 +1,40 @@
+// Mixin pour centrer les éléments avec Flexbox
+@mixin flex-center($direction: row, $justify: center, $align: center) {
+    display: flex;
+    flex-direction: $direction;
+    justify-content: $justify;
+    align-items: $align;
+  }
+  // Mixin pour créer des images responsives avec une hauteur spécifique
+  @mixin responsive-img($height) {
+    width: 100%;
+    height: $height;
+    border-radius: 25px;
+    object-fit: cover;
+  }
+  // Mixin pour les requêtes de media queries
+  @mixin media($query) {
+    @media screen and #{$query} {
+      @content;
+    }
+  }
+  // Mixin pour les transitions CSS
+  @mixin transition($properties, $duration: 0.2s, $timing-function: ease-in-out) {
+    transition: $properties $duration $timing-function;
+  }
+  // Mixin pour ajouter un effet de survol (hover)
+  @mixin hover-effect($scale: 1.05) {
+    &:hover {
+      cursor: pointer;
+      transform: scale($scale);
+    }
+  }
+  // Mixin pour les styles de police
+  @mixin font-style($size, $weight: normal, $color: $black-color) {
+    font-size: $size;
+    font-weight: $weight;
+    color: $color;
+    text-align: center;
+    word-break: break-word;
+  }
+  

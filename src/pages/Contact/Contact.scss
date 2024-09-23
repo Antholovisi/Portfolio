@@ -1,0 +1,72 @@
+@import '../../components/variables/colors.scss';
+@import '../../components/variables/mixins.scss';
+
+.contact-section {
+  text-align: center;
+  padding: 20px;
+
+  h1 {
+    margin-bottom: 20px;
+    font-size: 2.5rem;
+    color: $black-color;
+  }
+
+  p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+  }
+
+  .contact-container {
+    max-width: 50%;
+    margin: 0 auto;
+    padding: 10px 20px 20px 0;
+    background-color: $blue-color;
+    border: solid 1px $blue-darken-color;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+
+  .contact-form {
+
+    .form-group {
+      margin: 20px;
+
+      label {
+        display: block;
+        font-weight: bold;
+        margin-bottom: 5px;
+        color: $black-color;
+      }
+
+      input,
+      textarea {
+        width: 100%;
+        padding: 10px;
+        border-radius: 5px;
+        border: 1px solid $black-color;
+        font-size: 1rem;
+      }
+    }
+
+    .contact-button {
+      display: inline-block;
+      padding: 10px 20px;
+      background-color: $black-color;
+      color: white;
+      border: solid 1px #1F2D5C;
+      border-radius: 5px;
+      cursor: pointer;
+      font-weight: bold;
+      transition: background-color 0.3s ease;
+      
+
+      &:hover {
+        color: $black-color;
+        background-color: darken($background-light-color, 10%);
+        transition: all 0.3s ease;
+        transform: scale(1.1);
+        border: solid 1px #1F2D5C;
+      }
+    }
+  }
+}

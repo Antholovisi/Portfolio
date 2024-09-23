@@ -1,0 +1,60 @@
+@import '../variables/colors.scss';
+@import '../variables/mixins.scss';
+
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: $black-color;
+  z-index: 1000;
+  padding: 10px 0;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  
+  // Initialement, la navbar est invisible
+  opacity: 0;
+  transform: translateY(-100%);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  
+  // Lorsque la classe .navbar-visible est ajoutée, la navbar devient visible
+  &.navbar-visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.navbar nav ul {
+  display: flex;
+  justify-content: center;
+  margin: 0;
+  padding: 0;
+}
+
+.navbar nav ul li {
+  margin: 0 15px;
+}
+
+.navbar nav ul li a {
+  display: inline-block;
+  padding: 10px 20px;
+  background-color: $black-color;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-decoration: none;
+  transition: background-color 0.3s ease;
+
+  i {
+    font-size: 18px;
+  }
+
+  &:hover {
+    color: $black-color;
+    background-color: darken($background-light-color, 10%);
+  }
+
+  &:active {
+    background-color: lighten($black-color, 10%);
+  }
+}
