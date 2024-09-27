@@ -9,10 +9,25 @@ const Home = () => {
   useEffect(() => {
     const timer = setTimeout(() => {
       setIsVisible(true);
-    }, 500); 
+    }, 250);
     
     return () => clearTimeout(timer);
   }, []);
+
+  // Fonction pour gérer le scroll avec un offset pour la navbar
+  const handleScroll = (event, sectionId) => {
+    event.preventDefault(); // Empêcher le comportement par défaut du lien
+    const section = document.querySelector(sectionId);
+
+    if (section) {
+      const navbarHeight = document.querySelector('.navbar').offsetHeight;
+      const sectionPosition = section.offsetTop - navbarHeight; // Calcul du décalage
+      window.scrollTo({
+        top: sectionPosition,
+        behavior: 'smooth', // Scroll fluide
+      });
+    }
+  };
 
   return (
     <section className="home-section scroll-offset">
@@ -26,8 +41,10 @@ const Home = () => {
         </div>
         
         <div className="buttons">
-          <a href="#contact" className="cta-button">Me contacter</a>
-          <a href="/cv.pdf" className="cta-button" target="_blank" rel="noopener noreferrer">Mon CV</a>
+          <a href="#contact" className="cta-button" onClick={(e) => handleScroll(e, '#contact')}>Me contacter</a>
+          <a href={`${process.env.PUBLIC_URL}/CV2024.pdf`} className="cta-button" target="_blank" rel="noopener noreferrer">
+  Mon CV
+</a>
         </div>
       </div>
     </section>

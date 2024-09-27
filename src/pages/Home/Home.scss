@@ -10,28 +10,68 @@
   color: $black-color;
   overflow: hidden;
   z-index: 1;
-  background-color:#8DA4EF;
+  background-color: #8DA4EF;
+  padding: 20px 20px 50px 20px;
+
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('../../assets/images/banner.jpg');
+    background-size: cover;
+    background-position: center;
+    opacity: 0.3;
+    z-index: -1;
+  }
+
+  @include media('screen and (max-width: 768px)') {
+    min-height: 40vh;
+    &:before {
+      background-size: auto;
+    }
+  }
+
+  @include media('screen and (max-width: 482px)') {
+    min-height: 30vh;
+
+    &:before {
+      background-size: auto; 
+      background-position: center top;
+      background-repeat: no-repeat;
+    }
+  }
+
+  @include media('screen and (max-width: 375px)') {
+    min-height: 25vh;
+
+    &:before {
+      background-size: auto;
+      background-position: center top;
+      background-image: none;
+    }
+  }
 }
 
 .content {
   position: relative;
   z-index: 2;
   text-align: center;
-  
+
   // Initialement, le texte est invisible et décalé vers le haut
   opacity: 0;
-  transform: translateY(-50px); // Décalage vers le haut
-  transition: opacity 300ms ease-out, transform 300ms ease-out;
+  transform: translateY(-50px);
+  transition: opacity 700ms ease-out, transform 600ms ease-out;
 
   &.content-visible {
     opacity: 1;
-    transform: translateY(0); // Reviens à la position normale
+    transform: translateY(0);
   }
 }
 
 h1 {
-  margin: 0;
-  padding-top: 50px;
   font-size: 48px;
   font-weight: bold;
 }
@@ -44,25 +84,30 @@ p {
   display: flex;
   gap: 20px;
   margin-top: 20px;
+
+  @include media('screen and (max-width: 768px)') {
+    flex-direction: column;
+    gap: 15px; 
+    align-items: center;
+    margin-bottom: 20px;
+  }
 }
 
 .cta-button {
   display: inline-block;
   padding: 10px 20px;
-  background-color: $black-color;
-  color: white;
+  background-color: rgba(0, 0, 0, 0.2);
+  color: black;
   text-decoration: none;
   border-radius: 5px;
   font-weight: bold;
   transition: background-color 0.3s;
-  border: solid 1px #1F2D5C;
-}
 
-.cta-button:hover {
-  background-color: $blue-darken-color;
-  border: solid 1px #1F2D5C;
-  transition: all 0.3s ease;
-  transform: scale(1.1);
+  &:hover {
+    transform: scale(1.1);
+    transition: all 0.3s ease;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
 }
 
 .profile {
@@ -70,14 +115,31 @@ p {
   align-items: center;
   gap: 20px;
   margin-bottom: 20px;
+
+  @include media('screen and (max-width: 768px)') {
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+  }
 }
 
 .profile-picture {
-  width: 150px;
-  height: 150px;
+  width: 200px;
+  height: 200px;
+  margin-top: 20px;
   border-radius: 50%;
   object-fit: cover;
   border: solid 1px #1F2D5C;
+
+  @include media('screen and (max-width: 768px)') {
+    width: 150px;
+    height: 150px;
+  }
+
+  @include media('screen and (max-width: 480px)') {
+    width: 120px;
+    height: 120px;
+  }
 }
 
 .intro {
@@ -85,21 +147,41 @@ p {
 
   // Initialement, le texte est invisible
   opacity: 0;
-  transform: translateY(-50px); // Décalage vers le haut pour l'intro également
+  transform: translateY(-50px);
   transition: opacity 500ms ease-out, transform 300ms ease-out;
 
   &.intro-visible {
     opacity: 1;
     transform: translateY(0);
   }
+
+  @include media('screen and (max-width: 768px)') {
+    max-width: 90%;
+  }
 }
 
 .intro h1 {
   font-size: 36px;
   margin-bottom: 10px;
+
+  @include media('screen and (max-width: 768px)') {
+    font-size: 28px;
+  }
+
+  @include media('screen and (max-width: 480px)') {
+    font-size: 24px;
+  }
 }
 
 .intro p {
   font-size: 18px;
   line-height: 1.5;
+
+  @include media('screen and (max-width: 768px)') {
+    font-size: 16px;
+  }
+
+  @include media('screen and (max-width: 480px)') {
+    font-size: 14px; 
+  }
 }

@@ -3,9 +3,9 @@
 
 .portfolio-section {
   text-align: center;
-  padding: 20px;
+  padding: 20px 20px 50px 20px; ;
   background-color: $background-darken-color;
-  border: solid 1px $blue-darken-color;
+
   h1 {
     margin-bottom: 30px;
     font-size: 2.5rem;
@@ -13,33 +13,71 @@
   }
 
   /* La grille pour les cartes */
-  .apartement_grid {
-    display: flex;
-    background-color: $blue-color;
-    border: solid 2px $blue-darken-color;
+  .projects_grid {
+    background-color: #C1D0FF;
     border-radius: 25px;
     min-height: 100vh;
-    gap: 50px;
+    gap: 30px;
     flex-wrap: wrap;
-    padding: 50px;
+    padding: 20px;
     margin: 50px;
-    justify-content: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
     @include flex-center(stretch);
 
     @media screen and (max-width: 880px) {
-      background-color: $background-light-color;
+      background-color: #C1D0FF;
+      margin-top: 0;
     }
-  }
 
-  @media screen and (max-width: 930px) {
-    .apartement_grid {
-      margin-bottom: 0;
+    @media screen and (max-width: 930px) {
       padding: 22px 0;
       justify-content: center;
       gap: 22px;
-      background-color: $blue-color;
+      background-color: #C1D0FF;
+    }
+
+    /* À partir de 540px, le conteneur prend toute la largeur */
+    @media screen and (max-width: 540px) {
+      width: 100%; // Le conteneur prend toute la largeur de l'écran
+      margin: 0; // Retirer les marges
+      border-radius: 0; // Retirer les bordures arrondies pour un effet plein écran
+      box-shadow: none; // Retirer l'ombre pour un effet plus simple sur mobile
+      background-color: $background-darken-color;
+    }
+  }
+
+  /* Cartes toujours visibles */
+  .card {
+    position: relative;
+    overflow: hidden;
+    width: 340px;
+    height: 340px;
+    border-radius: 10px;
+    transition: all 0.3s ease;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+    border: solid 1px $blue-darken-color;
+    @include hover-effect(1.05);
+
+    img {
+      object-fit: inherit;
+      width: 100%;
+      height: 100%;
+      border-radius: 10px;
+    }
+
+    .modal {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: rgba(0, 0, 0, 0.8);
+      color: white;
+      padding: 20px;
+      border-radius: 10px;
+      text-align: center;
+      opacity: 0.9;
+      width: 80%;
+      transition: all 0.3s ease;
     }
   }
 }
-
-

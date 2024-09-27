@@ -2,7 +2,7 @@
 @import '../variables/mixins.scss';
 
 .footer {
-  height: 170px;
+  height: 125px;
   color: $background-light-color;
   background-color: $black-color;
   @include flex-center(column, center, center); /* Centrage vertical et horizontal */

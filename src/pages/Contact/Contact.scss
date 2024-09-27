@@ -3,7 +3,7 @@
 
 .contact-section {
   text-align: center;
-  padding: 20px;
+  padding: 20px 0 50px 0;
 
   h1 {
     margin-bottom: 20px;
@@ -17,13 +17,16 @@
   }
 
   .contact-container {
-    max-width: 50%;
+    width: 50vw;
     margin: 0 auto;
     padding: 10px 20px 20px 0;
-    background-color: $blue-color;
-    border: solid 1px $blue-darken-color;
+    background-color:$background-darken-color;
     border-radius: 10px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+
+    @include media('screen and (max-width: 768px)') {
+      width: 70vw; // Formulaire prend 70% de la largeur à partir de 768px
+    }
   }
 
   .contact-form {
@@ -58,7 +61,6 @@
       cursor: pointer;
       font-weight: bold;
       transition: background-color 0.3s ease;
-      
 
       &:hover {
         color: $black-color;

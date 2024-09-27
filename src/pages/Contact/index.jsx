@@ -1,15 +1,24 @@
-import React, { useState } from 'react';
+import React, { useState, useRef } from 'react';
+import emailjs from '@emailjs/browser';
 import './Contact.scss';
 
 const Contact = () => {
   const [email, setEmail] = useState('');
   const [message, setMessage] = useState('');
+  const form = useRef();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Générer un lien mailto pour l'envoi d'un email
-    const mailtoLink = `mailto:anthonylovisi@gmail.com?subject=Contact depuis le portfolio&body=Email: ${email}%0D%0A%0D%0AMessage: ${encodeURIComponent(message)}`;
-    window.location.href = mailtoLink;
+
+    // Envoi du formulaire via EmailJS
+    emailjs.sendForm('service_da3s8o8', 'template_bq15b3b', form.current, '_8Fotgv3wXnYYWruD')
+      .then(() => {
+        alert('Message envoyé avec succès !');
+        setEmail('');
+        setMessage('');
+      }, (error) => {
+        alert('Échec de l\'envoi: ' + error.text);
+      });
   };
 
   return (
@@ -17,12 +26,13 @@ const Contact = () => {
       <h1>Contact</h1>
       <p>Vous pouvez me contacter à cette adresse email : anthonylovisi@gmail.com ou via ce formulaire.</p>
       <div className="contact-container">
-        <form className="contact-form" onSubmit={handleSubmit}>
+        <form className="contact-form" ref={form} onSubmit={handleSubmit}>
           <div className="form-group">
-            <label htmlFor="email">Votre Email :</label>
+            <label htmlFor="user_email">Votre Email :</label>
             <input 
               type="email" 
-              id="email" 
+              id="user_email" 
+              name="user_email" 
               value={email} 
               onChange={(e) => setEmail(e.target.value)} 
               placeholder="exemple@mail.com" 
@@ -33,6 +43,7 @@ const Contact = () => {
             <label htmlFor="message">Votre Message :</label>
             <textarea 
               id="message" 
+              name="message" 
               value={message} 
               onChange={(e) => setMessage(e.target.value)} 
               placeholder="Que souhaitez-vous dire ?" 

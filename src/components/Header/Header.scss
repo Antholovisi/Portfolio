@@ -5,20 +5,59 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: $black-color;
+  background-color: $black-color; // Garder le fond noir
   z-index: 1000;
   padding: 10px 0;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  
-  // Initialement, la navbar est invisible
-  opacity: 0;
-  transform: translateY(-100%);
-  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
-  
-  // Lorsque la classe .navbar-visible est ajoutée, la navbar devient visible
-  &.navbar-visible {
+  opacity: 1; // Rendre le fond visible dès le début
+
+  // Initialement, le texte des liens est invisible
+  nav ul {
+    opacity: 0;
+    transform: translateY(-20px); // Légère translation vers le haut
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+  }
+
+  &.navbar-visible nav ul {
     opacity: 1;
-    transform: translateY(0);
+    transform: translateY(0); // Réinitialise la position
+  }
+
+  // Media queries pour tablette
+  @include media('screen and (max-width: 768px)') {
+    padding: 20px 0;
+    nav ul {
+      display: flex;
+      flex-wrap: wrap; // Permet de diviser les éléments sur plusieurs lignes
+      justify-content: center; // Centrer les éléments
+      gap: 10px; 
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 10px 0; // Ajuste l'espacement vertical
+    }
+  }
+
+  // Media queries pour mobile
+  @include media('screen and (max-width: 480px)') {
+    nav ul {
+      align-items: center;
+      list-style: none;
+    }
+
+    nav ul li {
+      margin: 10px 0;
+      width: auto; // Les éléments ne prennent plus toute la largeur
+      text-align: center;
+    }
+
+    nav ul li a {
+      display: inline-block;
+      padding: 15px 20px; // Ajuster le padding pour des boutons plus cliquables
+      width: auto; // Les liens ne prennent plus toute la largeur
+      text-align: center;
+    }
   }
 }
 
@@ -27,16 +66,17 @@
   justify-content: center;
   margin: 0;
   padding: 0;
+  list-style: none;
 }
 
 .navbar nav ul li {
-  margin: 0 15px;
+  margin: 0 5px;
 }
 
 .navbar nav ul li a {
   display: inline-block;
   padding: 10px 20px;
-  background-color: $black-color;
+  background-color: $black-color; // Assurez-vous que le fond est le même que celui de la navbar
   color: white;
   border: none;
   border-radius: 5px;
