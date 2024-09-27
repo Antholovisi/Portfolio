@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/Portfolio/static/css/main.47b39b32.css",
+    "main.js": "/Portfolio/static/js/main.aae3821e.js",
+    "static/js/453.1407b060.chunk.js": "/Portfolio/static/js/453.1407b060.chunk.js",
+    "static/media/profile.jpg": "/Portfolio/static/media/profile.f255a00d5ce280dc1a0d.jpg",
+    "static/media/Sophie_Bluel.jpg": "/Portfolio/static/media/Sophie_Bluel.7016a14ed83fc7c5040b.jpg",
+    "static/media/banner.jpg": "/Portfolio/static/media/banner.a3d85410c8297c211e96.jpg",
+    "static/media/Kasa.jpg": "/Portfolio/static/media/Kasa.7ba06f86c64463058878.jpg",
+    "static/media/skill.jpg": "/Portfolio/static/media/skill.71f6a39f87b6bfa90f9c.jpg",
+    "static/media/Booki.jpg": "/Portfolio/static/media/Booki.1abc567e878121c6b051.jpg",
+    "static/media/Nina_carducci.jpg": "/Portfolio/static/media/Nina_carducci.aead518b3ae096d60b65.jpg",
+    "static/media/Grimoire.jpg": "/Portfolio/static/media/Grimoire.51972eba8ce7d514f039.jpg",
+    "index.html": "/Portfolio/index.html",
+    "main.47b39b32.css.map": "/Portfolio/static/css/main.47b39b32.css.map",
+    "main.aae3821e.js.map": "/Portfolio/static/js/main.aae3821e.js.map",
+    "453.1407b060.chunk.js.map": "/Portfolio/static/js/453.1407b060.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.47b39b32.css",
+    "static/js/main.aae3821e.js"
+  ]
+}
