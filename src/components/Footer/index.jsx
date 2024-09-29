@@ -2,11 +2,13 @@ import React from 'react';
 import './Footer.scss';
 
 const Footer = () => {
+  const currentYear = new Date().getFullYear(); // Récupère l'année en cours
+
   return (
     <div className="footer">
       <div className="footerContent">
         <span>
-          © 2024 LOVISI Anthony. All <span className="second-line">rights reserved</span>
+          © {currentYear} LOVISI Anthony. All <span className="second-line">rights reserved</span>
         </span>
       </div>
       {/* Ajout des icônes sociales */}
